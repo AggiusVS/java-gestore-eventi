@@ -80,4 +80,8 @@ public class Evento {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
         return data.format(formatter) + " - " + titolo;
     }
+
+    public int postiDisponibili(){
+        return postiTotali - postiPrenotati;
+    }
 }

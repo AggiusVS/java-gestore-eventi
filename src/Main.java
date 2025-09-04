@@ -25,6 +25,34 @@ public class Main {
 
             /* Prenotazioni */
 
+            System.out.println("Inserire il numero di prenotazioni da effettuare");
+            int prenotazioni = Integer.parseInt(scanner.nextLine());
+            for (int i = 0; i < prenotazioni; i++) {
+                try { 
+                    evento.prenota();
+                }catch (Exception e) { 
+            System.out.println("Errore: " + e.getMessage());  
+            }
+
+            } 
+            System.out.println("Posti prenotati: " + evento.getPostiPrenotati());
+            System.out.println("Posti disponibili: " + evento.postiDisponibili());
+
+
+            /* Disdette */
+
+            System.out.println("Inserire numero posti da disdire: ");
+            int disdette = Integer.parseInt(scanner.nextLine());
+
+            for (int i = 0; i < disdette; i++) {
+                try { 
+                    evento.disdici();
+                } catch(Exception e) {
+                    System.out.println("Errore: " + e.getMessage());
+                }
+            }
+            System.out.println("Posti prenotati: " + evento.getPostiPrenotati());
+            System.out.println("Posti disponibili: " + evento.postiDisponibili());
 
         } catch (Exception e) { 
             System.out.println("Errore: " + e.getMessage());
